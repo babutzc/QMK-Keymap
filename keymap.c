@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [COLEMAK] = LAYOUT(
       KC_ESC               , KC_Q,  KC_W   , KC_F  ,   KC_P ,   KC_G ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSLS,
-      KC_LSFT              , KC_A,  KC_R   , KC_S  ,   KC_T ,   KC_D ,                                        KC_H,   KC_N ,  KC_E ,   KC_I ,  KC_O , KC_ENT,
-      MT(MOD_LCTL,KC_TILD) , KC_Z,  KC_X   , KC_C  ,   KC_V ,   KC_B , Copy, Paste   , KC_QUOT, KC_MINS, KC_K,  KC_M ,KC_COMM, KC_DOT ,KC_SLSH, RSFT_T(KC_CAPS),
-                                    KC_MPLY, KC_LGUI, KC_LOPT, KC_SPC ,LT(NUMPAD, KC_TAB) ,MO(MOUSE), LT(NAV, KC_BSPC), MO(SYMBOLS), MO(MEDIA), KC_LEAD
+      KC_TAB             , KC_A,  KC_R   , KC_S  ,   KC_T ,   KC_D ,                                        KC_H,   KC_N ,  KC_E ,   KC_I ,  KC_O , KC_ENT,
+      MT(MOD_LCTL,KC_TILD) , KC_Z,  KC_X   , KC_C  ,   KC_V ,   KC_B , KC_ENT, Paste   , KC_QUOT, KC_MINS, KC_K,  KC_M ,KC_COMM, KC_DOT ,KC_SLSH, RSFT_T(KC_BSPC),
+                                    KC_MPLY, KC_LGUI, KC_LOPT, KC_SPC ,KC_LSFT ,MO(NUMPAD), MO(SYMBOLS), LT(NAV, KC_BSPC), MO(MEDIA), KC_LEAD
     ),
 
 /*
@@ -91,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [QWERTY] = LAYOUT(
       KC_ESC               , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSLS,
-      KC_LSFT              , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_ENT,
-      MT(MOD_LCTL,KC_TILD) , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , XXXXXXX, Paste , KC_QUOT, KC_MINS, KC_N,  KC_M ,KC_COMM, KC_DOT ,KC_SLSH, RSFT_T(KC_CAPS),
-                                 KC_MPLY, KC_LGUI, KC_LOPT, KC_SPC ,LT(NUMPAD, KC_TAB) ,MO(MOUSE), LT(NAV, KC_BSPC), MO(SYMBOLS), MO(MEDIA), KC_LEAD
+      KC_TAB              , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_ENT,
+      MT(MOD_LCTL,KC_TILD) , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_ENT, KC_ESC , KC_QUOT, KC_MINS, KC_N,  KC_M ,KC_COMM, KC_DOT ,KC_SLSH, RSFT_T(KC_BSPC),
+                                 KC_MPLY, KC_LGUI, KC_LOPT, KC_SPC ,KC_LSFT ,MO(NUMPAD), MO(SYMBOLS), LT(NAV, KC_BSPC), MO(MEDIA), KC_LEAD
     ),
 
 
@@ -427,7 +427,7 @@ static void render_logo(void) {
 #ifdef OLED_DRIVER_ENABLE
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-	return OLED_ROTATION_180;
+  return OLED_ROTATION_180;
 }
 
 static void render_status(void) {
