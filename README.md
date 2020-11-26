@@ -1,6 +1,8 @@
 # QMK-Keymap
 
- 
+Inspired by: https://github.com/qmk/qmk_firmware/tree/master/keyboards/kyria/keymaps/corodiak
+
+ ```
 /*
  * Base Layer: Colemak
  *
@@ -90,3 +92,4 @@
  *                        | Dflt | Dflt |      |      |      |  |Toggle|      | Mode |      |      |
  *                        `----------------------------------'  `----------------------------------'
  
+```
